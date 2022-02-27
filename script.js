@@ -42,7 +42,7 @@ const agregarAnimaciones = () => {
 
     const mostrar = () => {
         $("#escenario").slideDown(3000, atardecer)
-                        .delay(2000)
+                        .delay(2500)
                         .slideUp()
     }
 
