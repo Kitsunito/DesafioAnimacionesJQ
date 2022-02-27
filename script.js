@@ -34,16 +34,25 @@ const inicio = () => {
 }
 
 const agregarAnimaciones = () => {
+    //Función que reinicia los formatos
+    const reiniciar = () => {
+        $("#lampara-apagada").show();
+        $("#lampara-encendida").hide();
+        $("#escenario").css({"background-color":"white"});
+    }
+
+    //Función que apaga la luz de aguera pero enciende la lámpara
     const atardecer = () => {
         $("#lampara-apagada").hide();
         $("#lampara-encendida").show();
         $("#escenario").css({"background-color":"black"});
     }
 
+    //Función que muestra la lámpara
     const mostrar = () => {
         $("#escenario").slideDown(3000, atardecer)
                         .delay(2500)
-                        .slideUp()
+                        .slideUp(reiniciar);
     }
 
     $("#animacion").click(mostrar);
